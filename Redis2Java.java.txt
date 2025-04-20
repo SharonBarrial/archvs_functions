@@ -1,0 +1,15 @@
+import redis.clients.jedis.Jedis;
+public class RedisPc2 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// Conectar a Redis 
+		Jedis jedis = new Jedis("192.168.18.51", 6379); 
+		// Almacenar un valor en Redis 
+		//jedis.set("clave", "valor"); 
+		// Recuperar un valor de Redis 
+		String valor = jedis.get("usuario:1000"); 
+		System.out.println("Valor: " + valor); 
+		// Cerrar la conexión 
+		jedis.close();
+	}
+}
